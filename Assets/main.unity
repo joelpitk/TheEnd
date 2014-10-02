@@ -132,6 +132,7 @@ GameObject:
   - 95: {fileID: 227352714}
   - 136: {fileID: 227352713}
   - 54: {fileID: 227352712}
+  - 114: {fileID: 227352718}
   m_Layer: 0
   m_Name: kalja
   m_TagString: Untagged
@@ -226,6 +227,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &227352718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 7ba9067536c76764ab7c214f6a11483f,
+    type: 2}
+  m_PrefabInternal: {fileID: 869934523}
+  m_GameObject: {fileID: 227352711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362fb7852c27a8a4dbf1742f6d44edf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &230226525
 Prefab:
   m_ObjectHideFlags: 0
@@ -283,6 +296,7 @@ GameObject:
   - 95: {fileID: 230868803}
   - 136: {fileID: 230868802}
   - 54: {fileID: 230868801}
+  - 114: {fileID: 230868807}
   m_Layer: 0
   m_Name: kalja
   m_TagString: Untagged
@@ -377,6 +391,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &230868807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 7ba9067536c76764ab7c214f6a11483f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1554609267}
+  m_GameObject: {fileID: 230868800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362fb7852c27a8a4dbf1742f6d44edf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &310768106
 Prefab:
   m_ObjectHideFlags: 0
@@ -434,7 +460,7 @@ GameObject:
   - 124: {fileID: 434637290}
   - 114: {fileID: 434637289}
   - 81: {fileID: 434637288}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -693,6 +719,7 @@ GameObject:
   - 95: {fileID: 700323194}
   - 65: {fileID: 700323199}
   - 54: {fileID: 700323198}
+  - 114: {fileID: 700323200}
   m_Layer: 0
   m_Name: salora
   m_TagString: Untagged
@@ -786,6 +813,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.19401073, y: 1.38925588, z: .893517017}
   m_Center: {x: -5.96046448e-07, y: 0, z: .0465299785}
+--- !u!114 &700323200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 1675306a92920b74fafa1889bf69be4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 604766506}
+  m_GameObject: {fileID: 700323193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dedcd13ab85032446b0a5c82d5532393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &843239491
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,6 +838,7 @@ GameObject:
   - 95: {fileID: 843239494}
   - 136: {fileID: 843239493}
   - 54: {fileID: 843239492}
+  - 114: {fileID: 843239498}
   m_Layer: 0
   m_Name: kalja
   m_TagString: Untagged
@@ -893,6 +933,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!114 &843239498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 7ba9067536c76764ab7c214f6a11483f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1627621417}
+  m_GameObject: {fileID: 843239491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362fb7852c27a8a4dbf1742f6d44edf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &843800233
 Prefab:
   m_ObjectHideFlags: 0
@@ -994,6 +1046,7 @@ GameObject:
   - 95: {fileID: 1200460545}
   - 136: {fileID: 1200460544}
   - 54: {fileID: 1200460543}
+  - 114: {fileID: 1200460549}
   m_Layer: 0
   m_Name: kalja
   m_TagString: Untagged
@@ -1088,6 +1141,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &1200460549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 7ba9067536c76764ab7c214f6a11483f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1276213608}
+  m_GameObject: {fileID: 1200460542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362fb7852c27a8a4dbf1742f6d44edf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1276213608
 Prefab:
   m_ObjectHideFlags: 0
@@ -1145,6 +1210,7 @@ GameObject:
   - 95: {fileID: 1307097131}
   - 65: {fileID: 1307097130}
   - 54: {fileID: 1307097129}
+  - 114: {fileID: 1307097135}
   m_Layer: 0
   m_Name: salora
   m_TagString: Untagged
@@ -1238,6 +1304,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
+--- !u!114 &1307097135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 1675306a92920b74fafa1889bf69be4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 520564728}
+  m_GameObject: {fileID: 1307097128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dedcd13ab85032446b0a5c82d5532393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1360648262
 Prefab:
   m_ObjectHideFlags: 0
@@ -1276,6 +1354,54 @@ Prefab:
     - target: {fileID: 400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: movement.maxGroundAcceleration
+      value: 525.950012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: movement.gravity
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: movement.maxFallSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: movement.maxForwardSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: movement.maxSidewaysSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: movement.maxBackwardsSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: jumping.baseHeight
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: jumping.extraHeight
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: m_Name
+      value: Player Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
@@ -1339,6 +1465,7 @@ GameObject:
   - 95: {fileID: 1550759307}
   - 136: {fileID: 1550759306}
   - 54: {fileID: 1550759305}
+  - 114: {fileID: 1550759311}
   m_Layer: 0
   m_Name: kalja
   m_TagString: Untagged
@@ -1433,6 +1560,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!114 &1550759311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 7ba9067536c76764ab7c214f6a11483f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1535940213}
+  m_GameObject: {fileID: 1550759304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362fb7852c27a8a4dbf1742f6d44edf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1554609267
 Prefab:
   m_ObjectHideFlags: 0
@@ -1610,6 +1749,7 @@ GameObject:
   - 95: {fileID: 1676252683}
   - 136: {fileID: 1676252682}
   - 54: {fileID: 1676252681}
+  - 114: {fileID: 1676252687}
   m_Layer: 0
   m_Name: kalja
   m_TagString: Untagged
@@ -1704,6 +1844,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
+--- !u!114 &1676252687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 7ba9067536c76764ab7c214f6a11483f,
+    type: 2}
+  m_PrefabInternal: {fileID: 230226525}
+  m_GameObject: {fileID: 1676252680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362fb7852c27a8a4dbf1742f6d44edf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1876413630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,6 +1869,7 @@ GameObject:
   - 95: {fileID: 1876413633}
   - 136: {fileID: 1876413632}
   - 54: {fileID: 1876413631}
+  - 114: {fileID: 1876413637}
   m_Layer: 0
   m_Name: kalja
   m_TagString: Untagged
@@ -1811,6 +1964,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1876413637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 7ba9067536c76764ab7c214f6a11483f,
+    type: 2}
+  m_PrefabInternal: {fileID: 843800233}
+  m_GameObject: {fileID: 1876413630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362fb7852c27a8a4dbf1742f6d44edf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1936339208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,7 +1986,7 @@ GameObject:
   - 4: {fileID: 1936339209}
   - 33: {fileID: 1936339211}
   - 23: {fileID: 1936339210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1926,6 +2091,7 @@ GameObject:
   - 95: {fileID: 1969175996}
   - 136: {fileID: 1969175995}
   - 54: {fileID: 1969175994}
+  - 114: {fileID: 1969176000}
   m_Layer: 0
   m_Name: kalja
   m_TagString: Untagged
@@ -2020,6 +2186,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!114 &1969176000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 7ba9067536c76764ab7c214f6a11483f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1958669079}
+  m_GameObject: {fileID: 1969175993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362fb7852c27a8a4dbf1742f6d44edf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2012056123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,8 +2210,9 @@ GameObject:
   - 114: {fileID: 2012056127}
   - 114: {fileID: 2012056126}
   - 114: {fileID: 2012056125}
-  m_Layer: 0
-  m_Name: First Person Controller
+  - 114: {fileID: 2012056129}
+  m_Layer: 8
+  m_Name: Player Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2080,9 +2259,9 @@ MonoBehaviour:
   canControl: 1
   useFixedUpdate: 1
   movement:
-    maxForwardSpeed: 6
-    maxSidewaysSpeed: 6
-    maxBackwardsSpeed: 6
+    maxForwardSpeed: 3
+    maxSidewaysSpeed: 3
+    maxBackwardsSpeed: 2
     slopeSpeedMultiplier:
       serializedVersion: 2
       m_Curve:
@@ -2103,14 +2282,14 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    maxGroundAcceleration: 20
+    maxGroundAcceleration: 525.950012
     maxAirAcceleration: 15
-    gravity: 20
-    maxFallSpeed: 20
+    gravity: 120
+    maxFallSpeed: 60
   jumping:
     enabled: 1
-    baseHeight: 1
-    extraHeight: 1
+    baseHeight: .5
+    extraHeight: .5
     perpAmount: 0
     steepPerpAmount: .5
   movingPlatform:
@@ -2155,6 +2334,17 @@ CharacterController:
   m_SkinWidth: .0500000007
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2012056129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012056123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28415400dece2941981c2e1ddede341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2130588782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,6 +2358,7 @@ GameObject:
   - 95: {fileID: 2130588785}
   - 65: {fileID: 2130588784}
   - 54: {fileID: 2130588783}
+  - 114: {fileID: 2130588789}
   m_Layer: 0
   m_Name: salora
   m_TagString: Untagged
@@ -2261,3 +2452,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
+--- !u!114 &2130588789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 1675306a92920b74fafa1889bf69be4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 310768106}
+  m_GameObject: {fileID: 2130588782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dedcd13ab85032446b0a5c82d5532393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
