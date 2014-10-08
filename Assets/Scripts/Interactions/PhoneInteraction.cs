@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PhoneInteraction : Interaction {
+	public PhoneReceiverChecker checker;
+
 	private string numberBeingDialled;
+	private Dictionary<string, IConversation> phonebook;
 
 	private bool receiverUp;
 	private float dialTimer;
@@ -13,9 +17,20 @@ public class PhoneInteraction : Interaction {
 
 		receiverUp = false;
 		dialTimer = 0f;
+
+		// Great testing stuff mmmm
+		phonebook = new Dictionary<string, IConversation>();
+		phonebook.Add("5551234", new MotherConversation());
 	}
 
 	void Update () {
+		if(!checker.ReceiverOnPlace && !receiverUp) {
+			ReceiverLifted();
+		}
+		if(checker.ReceiverOnPlace && receiverUp) {
+			ReceiverReturned();
+		}
+
 		// If the receiver is down or player has not pressed any buttons yet, do nothing.
 		if(receiverUp && numberBeingDialled.Length > 0) {
 			dialTimer += Time.deltaTime;
@@ -26,23 +41,29 @@ public class PhoneInteraction : Interaction {
 		}
 	}
 
+	void ReceiverLifted() {
+		receiverUp = true;
+	}
+
+	void ReceiverReturned() {
+		receiverUp = false;
+	}
+
 	private void Dial() {
-		Debug.Log("Thank you for dialling number " + numberBeingDialled);
+		IConversation response;
+		if(phonebook.TryGetValue(numberBeingDialled, out response)) {
+			Debug.Log(response.GetResponse());
+		}
+		else {
+			Debug.Log("The number you have tried to reach does not exist. Please try again.");
+		}
+
 		numberBeingDialled = "";
 	}
 
 	public override void Activate (GameObject player, GameObject itemInHand)
 	{
-		if(receiverUp) {
-			Debug.Log("Receiver down");
-			receiverUp = false;
-			// I guess play some sounds and make the receiver go back on the phone?
-		}
-		else {
-			Debug.Log("Receiver up");
-			receiverUp = true;
-			// I guess play some sounds and make the receiver float in the air in front of player or something?
-		}
+
 	}
 
 	public void AddNumber(string n) {

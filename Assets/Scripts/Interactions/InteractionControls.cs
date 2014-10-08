@@ -16,7 +16,7 @@ public class InteractionControls : MonoBehaviour {
 		if(carrying) {
 			// Make the item float at the front of the camera
 			carriedObject.rigidbody.velocity = Vector3.zero;
-			Vector3 carrySpot = Camera.main.transform.position + Camera.main.transform.forward * 2;
+			Vector3 carrySpot = Camera.main.transform.position + Camera.main.transform.forward * 1.5f + Camera.main.transform.right;
 			carriedObject.transform.position = Vector3.Lerp(carriedObject.transform.position, carrySpot, Time.deltaTime * 2);
 
 			// Make the item not rotate

@@ -9,9 +9,11 @@ public class HUD : MonoBehaviour {
 		crosshair = new Texture2D(2, 2);
 		for(int y = 0; y < 2; y++) {
 			for(int x = 0; x < 2; x++) {
-				crosshair.SetPixel(x, y, Color.white);
+				crosshair.SetPixel(x, y, Color.green);
 			}
 		}
+
+		crosshair.Apply();
 	}
 	
 	// Update is called once per frame
@@ -21,5 +23,11 @@ public class HUD : MonoBehaviour {
 
 	void OnGUI() {
 		GUI.DrawTexture(new Rect((Screen.width - crosshair.width) / 2, (Screen.height - crosshair.height) / 2, crosshair.width, crosshair.height), crosshair);
+
+		DrawTestGUI();
+	}
+
+	void DrawTestGUI() {
+		GUI.Label(new Rect(10, 10, 300, 30), "Current time: " + WorldClock.Hour + ":" + WorldClock.Minute);
 	}
 }
