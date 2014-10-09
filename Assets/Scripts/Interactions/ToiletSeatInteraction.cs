@@ -2,11 +2,11 @@
 
 namespace Assets.Scripts.Interactions
 {
-    public class ToiletLidInteraction : Interaction
+    public class ToiletSeatInteraction : Interaction
     {
         private bool isOpen;
         private Animation parentAnimation;
-        private ToiletSeatInteraction toiletSeat;
+        private ToiletLidInteraction toiletLid;
 
         public bool IsOpen
         {
@@ -15,8 +15,8 @@ namespace Assets.Scripts.Interactions
 
         public void Awake()
         {
-            parentAnimation = gameObject.transform.parent.animation;
-            toiletSeat = transform.parent.parent.GetComponentInChildren<ToiletSeatInteraction>();
+            parentAnimation = transform.parent.animation;
+            toiletLid = transform.parent.parent.GetComponentInChildren<ToiletLidInteraction>();
         }
 
         public override void Activate(GameObject player, GameObject itemInHand)
@@ -25,7 +25,7 @@ namespace Assets.Scripts.Interactions
             {
                 Open();
             }
-            else if (!toiletSeat.IsOpen)
+            else
             {
                 Close();
             }
@@ -33,18 +33,18 @@ namespace Assets.Scripts.Interactions
 
         private bool CanOpen()
         {
-            return !IsOpen && !parentAnimation.isPlaying;
+            return !IsOpen && !parentAnimation.isPlaying && toiletLid.IsOpen;
         }
 
         private void Open()
         {
-            parentAnimation.Play("OpenKansi");
+            parentAnimation.Play("OpenIstuin");
             isOpen = true;
         }
 
         private void Close()
         {
-            parentAnimation.Play("CloseKansi");
+            parentAnimation.Play("CloseIstuin");
             isOpen = false;
         }
     }
