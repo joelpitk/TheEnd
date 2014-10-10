@@ -52,10 +52,10 @@ public class PhoneInteraction : Interaction {
 	private void Dial() {
 		IConversation response;
 		if(phonebook.TryGetValue(numberBeingDialled, out response)) {
-			Debug.Log(response.GetResponse());
+			SubtitleManager.ShowSubtitle(response.GetNameOfTalker() + ":" + response.GetResponse());
 		}
 		else {
-			Debug.Log("The number you have tried to reach does not exist. Please try again.");
+			SubtitleManager.ShowSubtitle("Voice: The number you have tried to reach does not exist. Please try again.");
 		}
 
 		numberBeingDialled = "";

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PhoneDialInteraction : Interaction {
 	public string numberOrCharacterOnButton;
+	public AudioClip soundOnPress;
 
 	PhoneInteraction phone;
 
@@ -18,5 +19,6 @@ public class PhoneDialInteraction : Interaction {
 
 	public override void Activate (GameObject player, GameObject itemInHand) {
 		phone.AddNumber(numberOrCharacterOnButton);
+		phone.audio.Play();
 	}
 }

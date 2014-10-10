@@ -1,26 +1,46 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class MotherConversation : IConversation {
+	private Queue<ConversationTopic> topicQueue;
 
-	// Use this for initialization
-	void Start () {
-	
+	public MotherConversation() {
+		topicQueue = new Queue<ConversationTopic>();
+
+		topicQueue.Enqueue(new ConversationTopic(10, "First time you called me, love you!"));
+		topicQueue.Enqueue(new ConversationTopic(60, "Second call!!"));
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public string GetNameOfTalker() {
+		return "Mom";
 	}
 
 	public string GetResponse() {
-		int time = WorldClock.Hour;
-		if(time > 12) {
-			return "Hello this is mom";
-		}
-		else {
-			return "Hey I was asleep! :(";
+		int time = WorldClock.ElapsedMinutes;
+
+		// Remove topics that are too old
+		bool b = topicQueue.Count > 0;
+		while(b) {
+			ConversationTopic t = topicQueue.Peek();
+			if(t.MinutesValid < time) {
+				topicQueue.Dequeue();
+				b = topicQueue.Count > 0;
+			}
+			else {
+				b = false;
+			}
 		}
 
+		// If there's still topics to talk about
+		if(topicQueue.Count > 0) {
+			ConversationTopic t = topicQueue.Peek();
+			if(!t.HasBeenDiscussed) {
+				t.HasBeenDiscussed = true;
+				return t.Content;
+			}
+		}
+
+		// No more valid topics or current topic has already been discussed. No answer at this time!
+		return "";
 	}
 }

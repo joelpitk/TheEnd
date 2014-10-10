@@ -88,6 +88,7 @@ GameObject:
   - 54: {fileID: 617823}
   - 64: {fileID: 617824}
   - 114: {fileID: 617829}
+  - 82: {fileID: 617830}
   m_Layer: 0
   m_Name: puhelin
   m_TagString: Untagged
@@ -209,6 +210,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checker: {fileID: 804143536}
+--- !u!82 &617830
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617822}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 677522ca2466a5f46bbac01fd6f7640c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &129005176
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: 8
+  soundOnPress: {fileID: 0}
 --- !u!65 &198291284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -395,6 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: '#'
+  soundOnPress: {fileID: 0}
 --- !u!65 &219970781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -782,6 +843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: 5
+  soundOnPress: {fileID: 0}
 --- !u!65 &301593322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -927,6 +989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: 2
+  soundOnPress: {fileID: 0}
 --- !u!65 &388859360
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1197,6 +1260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: 3
+  soundOnPress: {fileID: 0}
 --- !u!65 &563485740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2410,6 +2474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: 0
+  soundOnPress: {fileID: 0}
 --- !u!65 &1209206718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2548,6 +2613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: 1
+  soundOnPress: {fileID: 0}
 --- !u!65 &1264125507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2647,6 +2713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: 9
+  soundOnPress: {fileID: 0}
 --- !u!65 &1280462352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2901,6 +2968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: 4
+  soundOnPress: {fileID: 0}
 --- !u!65 &1423560038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2968,6 +3036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: 7
+  soundOnPress: {fileID: 0}
 --- !u!65 &1529827154
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3556,6 +3625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: '*'
+  soundOnPress: {fileID: 0}
 --- !u!65 &1804312793
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3697,6 +3767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOrCharacterOnButton: 6
+  soundOnPress: {fileID: 0}
 --- !u!65 &1831215572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4066,6 +4137,7 @@ GameObject:
   - 114: {fileID: 2012056125}
   - 114: {fileID: 2012056129}
   - 114: {fileID: 2012056130}
+  - 114: {fileID: 2012056131}
   m_Layer: 8
   m_Name: Player Character
   m_TagString: Untagged
@@ -4212,6 +4284,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73a7dbb541f33d428fe148ab1d3a819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2012056131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012056123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e10c3e19fd1048e49bba33e71e774c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitleSkin: {fileID: 11400000, guid: 371dd7f759fe99f428273dd07433c962, type: 2}
 --- !u!1 &2052561802
 GameObject:
   m_ObjectHideFlags: 0
