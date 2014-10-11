@@ -8,7 +8,7 @@ public class MotherConversation : IConversation {
 		topicQueue = new Queue<ConversationTopic>();
 
 		topicQueue.Enqueue(new ConversationTopic(10, "First time you called me, love you!"));
-		topicQueue.Enqueue(new ConversationTopic(60, "Second call!!"));
+		topicQueue.Enqueue(new ConversationTopic(20, "Second call!!"));
 	}
 
 	public string GetNameOfTalker() {

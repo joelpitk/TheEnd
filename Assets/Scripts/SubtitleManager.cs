@@ -8,6 +8,8 @@ public class SubtitleManager : MonoBehaviour {
 	private static float timeToShowSubtitle;
 
 	private static string subtitle;
+	private static Transform subtitleSource;
+	private static float subtitleRadius;
 
 	// Use this for initialization
 	void Start () {
@@ -24,20 +26,19 @@ public class SubtitleManager : MonoBehaviour {
 
 	void OnGUI() {
 		if(showingSubtitle) {
-			GUI.skin = subtitleSkin;
-			GUI.Label(new Rect(10, Screen.height-160, Screen.width-20, 150), subtitle);
+			float dst = Vector3.Distance(gameObject.transform.position, subtitleSource.position);
+			if(dst <= subtitleRadius) {
+				GUI.skin = subtitleSkin;
+				GUI.Label(new Rect(10, Screen.height-160, Screen.width-20, 150), subtitle);
+			}
 		}
 	}
 
-	public static void ShowSubtitle(string s) {
-		float time = s.Length / 5;
-		time = Mathf.Clamp(timeToShowSubtitle, 2, 15);
-		ShowSubtitle(s, time);
-	}
-
-	public static void ShowSubtitle(string s, float timeToShow) {
+	public static void ShowSubtitle(string s, float timeToShow, Transform source, float radius) {
 		showingSubtitle = true;
 		subtitle = s;
 		timeToShowSubtitle = timeToShow;
+		subtitleSource = source;
+		subtitleRadius = radius;
 	}
 }

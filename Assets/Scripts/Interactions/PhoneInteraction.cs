@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class PhoneInteraction : Interaction {
 	public PhoneReceiverChecker checker;
+	public GameObject receiver;
 
 	private string numberBeingDialled;
 	private Dictionary<string, IConversation> phonebook;
@@ -52,10 +53,10 @@ public class PhoneInteraction : Interaction {
 	private void Dial() {
 		IConversation response;
 		if(phonebook.TryGetValue(numberBeingDialled, out response)) {
-			SubtitleManager.ShowSubtitle(response.GetNameOfTalker() + ":" + response.GetResponse());
+			SubtitleManager.ShowSubtitle(response.GetNameOfTalker() + ":" + response.GetResponse(), 5, receiver.transform, 2f);
 		}
 		else {
-			SubtitleManager.ShowSubtitle("Voice: The number you have tried to reach does not exist. Please try again.");
+			SubtitleManager.ShowSubtitle("Voice: The number you have tried to reach does not exist. Please try again.", 5, receiver.transform, 2f);
 		}
 
 		numberBeingDialled = "";
