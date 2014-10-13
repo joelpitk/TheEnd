@@ -1,0 +1,95 @@
+fileFormatVersion: 2
+guid: a3c6e77327618fc458c1b9898cc2a408
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: kaappi
+    100004: ovi_jaakaappi
+    100006: ovi_pakastin
+    100008: ritila
+    100010: ritila_001
+    100012: ritila_002
+    400000: //RootNode
+    400002: kaappi
+    400004: ovi_jaakaappi
+    400006: ovi_pakastin
+    400008: ritila
+    400010: ritila_001
+    400012: ritila_002
+    2300000: kaappi
+    2300002: ovi_jaakaappi
+    2300004: ovi_pakastin
+    2300006: ritila
+    2300008: ritila_001
+    2300010: ritila_002
+    2300012: //RootNode
+    3300000: kaappi
+    3300002: ovi_jaakaappi
+    3300004: ovi_pakastin
+    3300006: ritila
+    3300008: ritila_001
+    3300010: ritila_002
+    3300012: //RootNode
+    4300000: ritila_002
+    4300002: ritila_001
+    4300004: ritila
+    4300006: ovi_jaakaappi
+    4300008: ovi_pakastin
+    4300010: kaappi
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
