@@ -7,7 +7,6 @@ namespace Assets.Scripts.Interactions {
 
 		public GameObject sitterObject;
 		public ToiletPaperInteraction paper;
-		public Transform steppingUpFromToiletPosition;
 
 		private GameObject player;
 		private bool playerPooping;
@@ -26,20 +25,7 @@ namespace Assets.Scripts.Interactions {
 				if(standingUp) {
 					Animation anim = sitterObject.GetComponentInChildren<Animation>();
 					if(!anim.isPlaying) {
-						sitterObject.SetActive(false);
-						player.SetActive(true);
-						player.transform.forward = sitterObject.transform.forward;
-						Camera c = player.GetComponentInChildren<Camera>();
-						c.gameObject.GetComponent<MouseLook>().ResetYRotation();
-
-						// Set player position to the front of the toilet so she stands up to the correct position
-						Vector3 pos = sitterObject.transform.position;
-						pos.y = player.transform.position.y;
-						player.transform.position = pos;
-
-						playerPooping = false;
-						playerPooping = false;
-						standingUp = false;
+						SwitchToStanding();
 					}
 				}
 				else {
@@ -48,30 +34,66 @@ namespace Assets.Scripts.Interactions {
 						// If we are already seated, let's stand up then
 						Animation anim = sitterObject.GetComponentInChildren<Animation>();
 						if(!anim.isPlaying) {
-							standingUp = true;
-							anim.Play("StandUp");
+							StartStandingUp();
 						}
 					}
 				}
 			}
 		}
 
+		private void StartStandingUp() {
+			standingUp = true;
+			Animation anim = sitterObject.GetComponentInChildren<Animation>();
+			anim.Play("StandUp");
+		}
+
+		private void SwitchToStanding() {
+			player.SetActive(true);
+			player.transform.forward = sitterObject.transform.forward;
+			Camera c = player.GetComponentInChildren<Camera>();
+			c.gameObject.GetComponent<MouseLook>().ResetYRotation();
+			
+			// Set player position to the front of the toilet so she stands up to the correct position
+			Vector3 pos = sitterObject.transform.position;
+			pos.y = player.transform.position.y;
+			player.transform.position = pos;
+
+			playerPooping = false;
+			standingUp = false;
+
+			// If the player is carrying something, drop it
+			InteractionControls i1 = sitterObject.GetComponentInChildren<InteractionControls>();
+			if(i1.CarriedObject != null) {
+				i1.HandleDrop();
+			}
+
+			sitterObject.SetActive(false);
+		}
+
+		private void SwitchToSitting() {
+			playerPooping = true;
+			sitterObject.SetActive(true);
+			Animation anim = sitterObject.GetComponentInChildren<Animation>();
+			anim.Play("SitDown");
+
+			// If the player is carrying something, drop it
+			InteractionControls i1 = player.GetComponent<InteractionControls>();
+			if(i1.CarriedObject != null) {
+				i1.HandleDrop();
+			}
+			player.SetActive(false);
+
+			// Start playing pooping sounds. Fun!
+		}
+
 		public override void Activate (GameObject player, GameObject itemInHand)
 		{
 			if(playerPooping) {
-				standingUp = true;
-				Animation anim = sitterObject.GetComponentInChildren<Animation>();
-				anim.Play("StandUp");
+				StartStandingUp();
 			}
 			else if(lid.IsOpen) {
-				playerPooping = true;
 				this.player = player;
-				player.SetActive(false);
-				sitterObject.SetActive(true);
-				Animation anim = sitterObject.GetComponentInChildren<Animation>();
-				anim.Play("SitDown");
-
-				// Play pooping sound. Fun!
+				SwitchToSitting();
 			}
 		}
 	}

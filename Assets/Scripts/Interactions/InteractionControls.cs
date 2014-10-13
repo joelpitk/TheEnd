@@ -4,6 +4,11 @@ using System.Collections;
 public class InteractionControls : MonoBehaviour {
 	private bool carrying = false;
 	private GameObject carriedObject;
+	public GameObject CarriedObject {
+		get {
+			return carriedObject;
+		}
+	}
 
 	public float interactionDistance = 4f;
 
@@ -54,7 +59,7 @@ public class InteractionControls : MonoBehaviour {
 		}
 	}
 
-	private void HandleDrop() {
+	public void HandleDrop() {
 		carrying = false;
 		carriedObject.transform.parent = null;
 		carriedObject.rigidbody.useGravity = true;
@@ -62,7 +67,7 @@ public class InteractionControls : MonoBehaviour {
 		return;
 	}
 	
-	private void HandlePickup() {
+	public void HandlePickup() {
 		RaycastHit hit;
 		Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
 		
@@ -70,21 +75,25 @@ public class InteractionControls : MonoBehaviour {
 		int mask = 127;
 		
 		if(Physics.Raycast(ray, out hit, 5f, mask)) {
-			if(hit.collider.gameObject.rigidbody == null) {
-				// No rigidbody, no carrying.
-				return;
-			}
-			
-			float mass = hit.collider.gameObject.rigidbody.mass;
-			// TODO: Add some cool calculations of player's strength and energy or something here
-			float maxCarryWeight = 40f;
+			SetItemInHand(hit.collider.gameObject);
+		}
+	}
 
-			if(mass <= maxCarryWeight) {
-				carrying = true;
-				carriedObject = hit.collider.gameObject;
-				carriedObject.transform.parent = Camera.main.transform;
-				carriedObject.rigidbody.useGravity = false;
-			}
+	public void SetItemInHand(GameObject item) {
+		if(item.rigidbody == null) {
+			// No rigidbody, no carrying.
+			return;
+		}
+		
+		float mass = item.rigidbody.mass;
+		// TODO: Add some cool calculations of player's strength and energy or something here
+		float maxCarryWeight = 40f;
+		
+		if(mass <= maxCarryWeight) {
+			carrying = true;
+			carriedObject = item;
+			carriedObject.transform.parent = Camera.main.transform;
+			carriedObject.rigidbody.useGravity = false;
 		}
 	}
 }
