@@ -2949,6 +2949,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 898968119}
   - 114: {fileID: 898968118}
+  - 114: {fileID: 898968121}
+  - 114: {fileID: 898968120}
   m_Layer: 0
   m_Name: Global Scripts
   m_TagString: Untagged
@@ -2980,6 +2982,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
+--- !u!114 &898968120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 898968117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc48eb0a188b134896b7565dedeee45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &898968121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 898968117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524bdf1cd7a9d144fadcb389e9e735bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &900474174
 GameObject:
   m_ObjectHideFlags: 0
@@ -6905,6 +6929,7 @@ GameObject:
   - 114: {fileID: 2012056129}
   - 114: {fileID: 2012056130}
   - 114: {fileID: 2012056131}
+  - 114: {fileID: 2012056132}
   m_Layer: 8
   m_Name: Player Character
   m_TagString: Untagged
@@ -7063,6 +7088,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subtitleSkin: {fileID: 11400000, guid: 371dd7f759fe99f428273dd07433c962, type: 2}
+--- !u!114 &2012056132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012056123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c71463759a994b4f9b2eedda9f3d683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2052561802
 GameObject:
   m_ObjectHideFlags: 0

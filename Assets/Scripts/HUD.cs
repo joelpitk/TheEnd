@@ -29,5 +29,13 @@ public class HUD : MonoBehaviour {
 
 	void DrawTestGUI() {
 		GUI.Label(new Rect(10, 10, 300, 30), "Current time: " + WorldClock.Hour + ":" + WorldClock.Minute);
+		GUI.Label(new Rect(10, 40, 300, 30), "Power: " + WorldStatus.Electricity);
+		GUI.Label(new Rect(10, 70, 300, 30), "Water: " + WorldStatus.Water);
+
+		PlayerStatus ps = GetComponent<PlayerStatus>();
+		GUI.Label(new Rect(10, 120, 300, 30), "Hunger: " + ps.Hunger);
+		GUI.Label(new Rect(10, 150, 300, 30), "Thirst: " + ps.Thirst);
+		GUI.Label(new Rect(10, 180, 300, 30), "Sanity: " + ps.Sanity);
+		GUI.Label(new Rect(10, 210, 300, 30), "Energy: " + ps.Energy);
 	}
 }
