@@ -31,7 +31,7 @@ public class SaloraInteraction : Interaction, IGameEventListener {
 	// Update is called once per frame
 	void Update () {
 		if(TVOn) {
-			SubtitleManager.ShowTelevisionSubtitle(currentChannel.CurrentProgram.Text, gameObject.transform, 12f * volume);
+			SubtitleManager.ShowTelevisionSubtitle(currentChannel.CurrentProgram.Text, gameObject.transform, volume);
 		}
 	}
 
