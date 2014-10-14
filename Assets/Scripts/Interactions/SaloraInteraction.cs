@@ -6,14 +6,33 @@ public class SaloraInteraction : Interaction, IGameEventListener {
 		get; set;
 	}
 
+	private float volume;
+	private TVChannel currentChannel;
+
+	public void VolumeDown() {
+		volume -= 0.1f;
+		if(volume < 0f)
+			volume = 0f;
+	}
+	public void VolumeUp() {
+		volume += 0.1f;
+		if(volume > 1f)
+			volume = 1f;
+	}
+
 	// Use this for initialization
 	void Start () {
 		GameEventManager.RegisterListener(this);
+
+		volume = 1f;
+		currentChannel = new TVChannel();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		if(TVOn) {
+			SubtitleManager.ShowTelevisionSubtitle(currentChannel.CurrentProgram.Text, gameObject.transform, 12f * volume);
+		}
 	}
 
 	public override void Activate(GameObject player, GameObject itemInHand) {
@@ -27,12 +46,11 @@ public class SaloraInteraction : Interaction, IGameEventListener {
 
 	public void SwitchOn() {
 		TVOn = true;
-		Debug.Log("TV is on, rejoice!");
 	}
 
 	public void SwitchOff() {
 		TVOn = false;
-		Debug.Log("TV is off, what a bummer!");
+		SubtitleManager.StopTelevisionSubtitle();
 	}
 
 	public void ReceiveEvent(GameEvent e) {

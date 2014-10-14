@@ -4,41 +4,69 @@ using System.Collections;
 public class SubtitleManager : MonoBehaviour {
 	public GUISkin subtitleSkin;
 
-	private static bool showingSubtitle;
-	private static float timeToShowSubtitle;
+	private static bool showingTelevisionSubtitle;
+	private static string televisionSubtitle;
+	private static Transform televisionSubtitleSource;
+	private static float televisionVolume;
 
-	private static string subtitle;
-	private static Transform subtitleSource;
-	private static float subtitleRadius;
+	private static bool showingTelephoneSubtitle;
+	private static string telephoneSubtitle;
+	private static Transform telephoneSubtitleSource;
 
 	// Use this for initialization
 	void Start () {
-		showingSubtitle = false;
+		showingTelephoneSubtitle = false;
+		showingTelevisionSubtitle = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(showingSubtitle) {
-			timeToShowSubtitle -= Time.deltaTime;
-			showingSubtitle = timeToShowSubtitle > 0f;
-		}
+	}
+
+	private bool ShowingSubtitle() {
+		return showingTelephoneSubtitle || showingTelevisionSubtitle;
 	}
 
 	void OnGUI() {
-		if(showingSubtitle) {
-			float dst = Vector3.Distance(gameObject.transform.position, subtitleSource.position);
-			if(dst <= subtitleRadius) {
-				GUI.skin = subtitleSkin;
-				GUI.Label(new Rect(10, Screen.height-160, Screen.width-20, 150), subtitle);
+		if(ShowingSubtitle()) {
+			// Telephone subtitles trump television subtitles
+			if(showingTelephoneSubtitle) {
+				float telephoneSoundRadius = 2.6f;
+				float dstTelephone = Vector3.Distance(gameObject.transform.position, telephoneSubtitleSource.position);
+				if(dstTelephone <= telephoneSoundRadius) {
+					GUI.skin = subtitleSkin;
+					GUI.Label(new Rect(10, Screen.height-160, Screen.width-20, 150), telephoneSubtitle);
+					return;
+				}
+			}
+
+			if(showingTelevisionSubtitle) {
+				float televisionSoundRadius = televisionVolume * 12f;
+				float dstTelevision = Vector3.Distance(gameObject.transform.position, televisionSubtitleSource.position);
+				if(dstTelevision <= televisionSoundRadius) {
+					GUI.skin = subtitleSkin;
+					GUI.Label(new Rect(10, Screen.height-160, Screen.width-20, 150), televisionSubtitle);
+				}
 			}
 		}
 	}
 
-	public static void ShowSubtitle(string s, float timeToShow, Transform source, float radius) {
-		showingSubtitle = true;
-		subtitle = s;
-		timeToShowSubtitle = timeToShow;
-		subtitleSource = source;
-		subtitleRadius = radius;
+	public static void ShowTelephoneSubtitle(string s, Transform source) {
+		showingTelephoneSubtitle = true;
+		telephoneSubtitle = s;
+		telephoneSubtitleSource = source;
+	}
+	public static void StopTelephoneSubtitle() {
+		showingTelephoneSubtitle = false;
+	}
+
+	public static void ShowTelevisionSubtitle(string s, Transform source, float volume) {
+		showingTelevisionSubtitle = true;
+		televisionSubtitle = s;
+		televisionSubtitleSource = source;
+		televisionVolume = volume;
+	}
+	public static void StopTelevisionSubtitle() {
+		showingTelevisionSubtitle = false;
 	}
 }

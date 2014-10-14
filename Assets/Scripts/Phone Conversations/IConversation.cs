@@ -2,6 +2,13 @@
 using System.Collections;
 
 public interface IConversation {
-	string GetNameOfTalker();
+	string NameOfTalker {
+		get;
+	}
+	bool ConversationDone {
+		get;
+	}
+
 	string GetResponse();
+	bool OpenLine();
 }
