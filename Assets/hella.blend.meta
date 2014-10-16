@@ -1,0 +1,113 @@
+fileFormatVersion: 2
+guid: 0d3d573146d98e34fa380905bbc600b8
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: levyt
+    100004: liesi
+    100006: nuppi_lampotila
+    100008: nuppi_levy1
+    100010: nuppi_levy2
+    100012: nuppi_levy3
+    100014: nuppi_levy4
+    100016: nuppi_uuni
+    100018: uuniluukku
+    100020: vetolaatikko
+    400000: //RootNode
+    400002: levyt
+    400004: liesi
+    400006: nuppi_lampotila
+    400008: nuppi_levy1
+    400010: nuppi_levy2
+    400012: nuppi_levy3
+    400014: nuppi_levy4
+    400016: nuppi_uuni
+    400018: uuniluukku
+    400020: vetolaatikko
+    2300000: levyt
+    2300002: liesi
+    2300004: nuppi_lampotila
+    2300006: nuppi_levy1
+    2300008: nuppi_levy2
+    2300010: nuppi_levy3
+    2300012: nuppi_levy4
+    2300014: nuppi_uuni
+    2300016: uuniluukku
+    2300018: vetolaatikko
+    3300000: levyt
+    3300002: liesi
+    3300004: nuppi_lampotila
+    3300006: nuppi_levy1
+    3300008: nuppi_levy2
+    3300010: nuppi_levy3
+    3300012: nuppi_levy4
+    3300014: nuppi_uuni
+    3300016: uuniluukku
+    3300018: vetolaatikko
+    4300000: nuppi_uuni
+    4300002: nuppi_lampotila
+    4300004: nuppi_levy4
+    4300006: nuppi_levy3
+    4300008: nuppi_levy2
+    4300010: nuppi_levy1
+    4300012: levyt
+    4300014: uuniluukku
+    4300016: vetolaatikko
+    4300018: liesi
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
