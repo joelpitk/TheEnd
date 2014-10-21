@@ -111,6 +111,7 @@ GameObject:
   - 23: {fileID: 2300006}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400002}
+  - 82: {fileID: 8200000}
   m_Layer: 0
   m_Name: uuniluukku
   m_TagString: Untagged
@@ -287,7 +288,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
-  m_LocalPosition: {x: 7.00601292, y: .201407209, z: 5.79350376}
+  m_LocalPosition: {x: 6.4064126, y: .201407209, z: 7.64063835}
   m_LocalScale: {x: .339074671, y: .339074582, z: .339074582}
   m_Children:
   - {fileID: 400004}
@@ -788,6 +789,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.99999988, y: .5, z: 2.6661458}
   m_Center: {x: 5.06639651e-07, y: -1.25, z: 2.33307171}
+--- !u!82 &8200000
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 3
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -848,6 +907,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closingAnimationName: CloseVetolaatikko
   openingAnimationName: OpenVetolaatikko
+  closingSound: {fileID: 0}
+  closingSoundDelay: 0
+  openingSound: {fileID: 0}
+  openingSoundDelay: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -861,6 +924,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closingAnimationName: CloseLuukku
   openingAnimationName: OpenLuukku
+  closingSound: {fileID: 8300000, guid: 4780321ccabe1a24d9cdedcacf36d870, type: 3}
+  closingSoundDelay: .5
+  openingSound: {fileID: 8300000, guid: 1caace99d6e739f4cb93abf019eb9ff0, type: 3}
+  openingSoundDelay: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

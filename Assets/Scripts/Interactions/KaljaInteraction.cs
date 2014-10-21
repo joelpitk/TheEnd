@@ -1,19 +1,28 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class KaljaInteraction : Interaction {
+public class KaljaInteraction : Interaction
+{
+    public AudioClip openSound;
+    public AudioClip sipSound;
+    private bool isOpen;
+    public int sipsLeft = 3;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public override void Activate(GameObject player, GameObject itemInHand)
+    {
+        if (isOpen && sipsLeft >= 0)
+        {
+            audio.clip = sipSound;
+            sipsLeft--;
+        }
+        else
+        {
+            audio.clip = openSound;
+            isOpen = true;
+        }
 
-	public override void Activate(GameObject player, GameObject itemInHand) {
-		Debug.Log("Ahhh what a tasty Corgi!");
-	}
+        if (sipsLeft >= 0)
+        {
+            audio.Play();
+        }
+    }
 }
