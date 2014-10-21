@@ -1,0 +1,88 @@
+fileFormatVersion: 2
+guid: a3930c1a9d426ec41afc87dee7b49316
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: patja
+    100002: //RootNode
+    100004: sanky
+    100006: tyyny
+    100008: Cube
+    100010: peitto
+    400000: patja
+    400002: //RootNode
+    400004: sanky
+    400006: tyyny
+    400008: Cube
+    400010: peitto
+    2300000: patja
+    2300002: sanky
+    2300004: tyyny
+    2300006: Cube
+    2300008: peitto
+    3300000: patja
+    3300002: sanky
+    3300004: tyyny
+    3300006: Cube
+    3300008: peitto
+    4300000: tyyny
+    4300002: patja
+    4300004: sanky
+    4300006: Cube
+    4300008: peitto
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
