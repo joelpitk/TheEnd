@@ -13,7 +13,7 @@ public class GameEventManager : MonoBehaviour {
 		System.Random r = new System.Random();
 
 		// A power outage happens some time after the first day
-		events.Add(new GameEvent("PowerOutage", r.Next(60*24, 60*24*5)));
+		events.Add(new GameEvent("PowerOutage", r.Next(11, 12)));
 		// Water gets cut some time after the second day
 		events.Add (new GameEvent("WaterCut", r.Next(60*24*2, 60*24*5)));
 	}

@@ -50,8 +50,6 @@ public class PhoneInteraction : Interaction, IGameEventListener {
 		}
 
 		if(lineOpen) {
-			string toShow = currentConversation.NameOfTalker + ": " + currentConversation.GetResponse();
-			SubtitleManager.ShowTelephoneSubtitle(toShow, receiver.transform);
 			if(currentConversation.ConversationDone) {
 				CloseLine();
 			}
@@ -76,6 +74,9 @@ public class PhoneInteraction : Interaction, IGameEventListener {
 	private void OpenLine(IConversation c) {
 		currentConversation = c;
 		c.OpenLine();
+
+		string toShow = currentConversation.NameOfTalker + ": " + currentConversation.GetResponse();
+		SubtitleManager.ShowTelephoneSubtitle(toShow, receiver.transform);
 		lineOpen = true;
 	}
 

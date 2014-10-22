@@ -16,14 +16,14 @@ public class ConversationTopic {
 		get; set;
 	}
 
-	public ConversationTopic() {
-		MinutesValid = 0;
-		Content = "";
+	public float LengthInSeconds {
+		get; set;
 	}
 
-	public ConversationTopic(int minutesValid, string content) {
+	public ConversationTopic(int minutesValid, string content, float lengthInSeconds) {
 		MinutesValid = minutesValid;
 		Content = content;
 		HasBeenDiscussed = false;
+		LengthInSeconds = lengthInSeconds;
 	}
 }

@@ -5,14 +5,13 @@ public class MotherConversation : IConversation {
 	private Queue<ConversationTopic> topicQueue;
 
 	private float startTime;
-	private float currentTopicLengthInSeconds;
 	private ConversationTopic currentTopic;
 
 	public MotherConversation() {
 		topicQueue = new Queue<ConversationTopic>();
 
-		topicQueue.Enqueue(new ConversationTopic(10, "First time you called me, love you!"));
-		topicQueue.Enqueue(new ConversationTopic(20, "Second call!!"));
+		topicQueue.Enqueue(new ConversationTopic(10, "Oh honey, thank god for calling me!", 10));
+		topicQueue.Enqueue(new ConversationTopic(20, "Second call!!", 10));
 	}
 
 	public string NameOfTalker {
@@ -23,7 +22,7 @@ public class MotherConversation : IConversation {
 
 	public bool ConversationDone {
 		get {
-			return startTime + currentTopicLengthInSeconds < WorldClock.ElapsedRealSeconds;
+			return startTime + currentTopic.LengthInSeconds < WorldClock.ElapsedRealSeconds;
 		}
 	}
 
@@ -50,8 +49,6 @@ public class MotherConversation : IConversation {
 				t.HasBeenDiscussed = true;
 				currentTopic = t;
 				startTime = WorldClock.ElapsedRealSeconds;
-				// A retarded way to figure out how long to show a subtitle
-				currentTopicLengthInSeconds = Mathf.Clamp(currentTopic.Content.Length / 5f, 3f, 20f);
 				return true;
 			}
 		}

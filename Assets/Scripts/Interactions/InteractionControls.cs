@@ -54,7 +54,7 @@ public class InteractionControls : MonoBehaviour {
 			Interaction i = hit.collider.gameObject.GetComponent<Interaction>();
 			if(i != null) {
 				// Whee, can interact!
-				i.Activate(gameObject, null);
+				i.Activate(gameObject, carriedObject);
 			}
 		}
 	}
