@@ -69,10 +69,13 @@ public class RecordPlayerInteraction : Interaction, IGameEventListener {
 
 	private void TogglePlaying() {
 		if(playingRecord) {
+            animation.Play("TurnOff");
 			StopPlaying();
 		}
 		else {
-			StartPlaying();
+		    if (currentRecord != null) {
+		        animation.Play("TurnOn");
+		    }
 		}
 	}
 
@@ -81,11 +84,10 @@ public class RecordPlayerInteraction : Interaction, IGameEventListener {
 		amplifier.StopPlaying();
 	}
 
-	private void StartPlaying() {
-		if(currentRecord != null) {
+    //Called from TurnOn-animation via animation event (Music starts only after the needle hits the record)
+    public void StartPlaying() {
 			playingRecord = true;
 			amplifier.StartPlaying(currentRecord.song);
-		}
 	}
 
 	public void ReceiveEvent(GameEvent e) {
