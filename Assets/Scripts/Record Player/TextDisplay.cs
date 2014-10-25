@@ -6,6 +6,7 @@ public class TextDisplay : MonoBehaviour
     private TextMesh textMesh;
     private string messageToShow;
     private float secondsToShowMessage;
+    private string originalText;
 
     public string Text
     {
@@ -16,6 +17,7 @@ public class TextDisplay : MonoBehaviour
     public void Awake()
     {
         textMesh = GetComponent<TextMesh>();
+        originalText = textMesh.text;
     }
 
     public void TurnOn()
@@ -25,6 +27,7 @@ public class TextDisplay : MonoBehaviour
 
     public void TurnOff()
     {
+        textMesh.text = originalText;
         gameObject.SetActive(false);
     }
 
@@ -37,7 +40,7 @@ public class TextDisplay : MonoBehaviour
 
     public IEnumerator DisplayMessage()
     {
-        string originalText = textMesh.text;
+        originalText = textMesh.text;
         textMesh.text = messageToShow;
         yield return new WaitForSeconds(secondsToShowMessage);
         textMesh.text = originalText;
