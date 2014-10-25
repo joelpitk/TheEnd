@@ -6,10 +6,12 @@ public class Amplifier : Interaction, IGameEventListener {
 
 	private bool amplifierOn;
 	private float volume;
+    public TextDisplay textDisplay;
 
 	// Use this for initialization
 	void Start () {
 		amplifierOn = false;
+        textDisplay.TurnOff();
 		volume = 0.5f;
 		foreach(AudioSource a in speakers) {
 			a.volume = 0f;
@@ -64,6 +66,7 @@ public class Amplifier : Interaction, IGameEventListener {
 
 		if(amplifierOn) {
 			amplifierOn = false;
+            textDisplay.TurnOff();
 			// A record is playing but the amplifier was switched off
 			foreach(AudioSource a in speakers) {
 				a.volume = 0f;
@@ -71,6 +74,8 @@ public class Amplifier : Interaction, IGameEventListener {
 		}
 		else {
 			amplifierOn = true;
+            textDisplay.TurnOn();
+            textDisplay.ShowMessageForSeconds("Hello!", 1.5f);
 			// A record was already playing, bring the noize!
 			foreach(AudioSource a in speakers) {
 				a.volume = volume;
@@ -81,6 +86,7 @@ public class Amplifier : Interaction, IGameEventListener {
 	public void ReceiveEvent(GameEvent e) {
 		if(e.Name.Equals("PowerOutage")) {
 			StopPlaying();
+            textDisplay.TurnOff();
 		}
 	}
 }
