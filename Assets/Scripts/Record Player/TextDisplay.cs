@@ -7,6 +7,12 @@ public class TextDisplay : MonoBehaviour
     private string messageToShow;
     private float secondsToShowMessage;
 
+    public string Text
+    {
+        get { return textMesh.text; }
+        set { textMesh.text = value; }
+    }
+
     public void Awake()
     {
         textMesh = GetComponent<TextMesh>();
