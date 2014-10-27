@@ -25,7 +25,9 @@ public class PhoneInteraction : Interaction, IGameEventListener {
 
 		// Great testing stuff mmmm
 		phonebook = new Dictionary<string, IConversation>();
-		phonebook.Add("5551234", new MotherConversation());
+		phonebook.Add("5554434", new MotherConversation());
+		phonebook.Add("5552325", new LoverConversation());
+		phonebook.Add("911", new EmergencyConversation());
 
 		invalidNumber = new InvalidNumberConversation();
 

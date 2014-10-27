@@ -27,6 +27,10 @@ public class RecordPlayerInteraction : Interaction, IGameEventListener {
 				}
 				else {
 					// TODO: There's a record and we are playing it, make it spin!
+					currentRecord.transform.position = Vector3.Lerp(currentRecord.transform.position, recordPlayingSpot.position, Time.deltaTime);
+					Vector3 r = currentRecord.transform.rotation.eulerAngles;
+					r.y += 3;
+					currentRecord.transform.rotation = Quaternion.Euler(r);
 				}
 			}
 			else {

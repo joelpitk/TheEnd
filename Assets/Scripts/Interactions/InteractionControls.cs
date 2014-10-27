@@ -30,8 +30,11 @@ public class InteractionControls : MonoBehaviour {
 	}
 
 	void Update() {
-		if(Input.GetMouseButtonDown(0)) {
+		if(Input.GetKeyDown(KeyCode.E)) {
 			HandleInteraction();
+		}
+		if(Input.GetMouseButtonDown(0)) {
+			HandleCarriedInteraction();
 		}
 		else if(Input.GetMouseButtonDown(1)) {
 			if(carrying) {
@@ -55,6 +58,15 @@ public class InteractionControls : MonoBehaviour {
 			if(i != null) {
 				// Whee, can interact!
 				i.Activate(gameObject, carriedObject);
+			}
+		}
+	}
+
+	private void HandleCarriedInteraction() {
+		if(carriedObject != null) {
+			Interaction i = carriedObject.GetComponent<Interaction>();
+			if(i != null) {
+				i.Activate(gameObject, null);
 			}
 		}
 	}

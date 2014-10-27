@@ -8,20 +8,31 @@ namespace Assets.Scripts.Interactions {
 		public GameObject sitterObject;
 		public ToiletPaperInteraction paper;
 
+		private bool playerUrinating;
+
 		private GameObject player;
-		private bool playerPooping;
+		private bool playerSitting;
 		private bool standingUp;
+		private bool sittingDown;
 
 		// Use this for initialization
 		void Start () {
 			lid = transform.parent.GetComponentInChildren<ToiletLidInteraction>();
-			playerPooping = false;
+			playerSitting = false;
 			standingUp = false;
+			sittingDown = false;
+			playerUrinating = false;
 		}
 		
 		// Update is called once per frame
 		void Update () {
-			if(playerPooping) {
+			if(playerSitting) {
+				if(playerUrinating) {
+					if(!PlayerStatus.Thirst.Urinating) {
+						StopUrinating();
+					}
+				}
+
 				if(standingUp) {
 					Animation anim = sitterObject.GetComponentInChildren<Animation>();
 					if(!anim.isPlaying) {
@@ -31,7 +42,7 @@ namespace Assets.Scripts.Interactions {
 				else {
 					Vector3 moving = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 					if(moving != Vector3.zero) {
-						// If we are already seated, let's stand up then
+						// If we are already seated, let's stand up
 						Animation anim = sitterObject.GetComponentInChildren<Animation>();
 						if(!anim.isPlaying) {
 							StartStandingUp();
@@ -39,12 +50,49 @@ namespace Assets.Scripts.Interactions {
 					}
 				}
 			}
+			else if(sittingDown) {
+				Animation anim = sitterObject.GetComponentInChildren<Animation>();
+				if(!anim.isPlaying) {
+					SwitchToSitting();
+				}
+			}
+		}
+
+		private void StopUrinating() {
+			PlayerStatus.Thirst.StopUrinating();
+			sitterObject.audio.Stop();
+			playerUrinating = false;
+		}
+
+		private void StartUrinating() {
+			playerUrinating = true;
+			PlayerStatus.Thirst.StartUrinating();
+			sitterObject.audio.Play();
 		}
 
 		private void StartStandingUp() {
 			standingUp = true;
 			Animation anim = sitterObject.GetComponentInChildren<Animation>();
 			anim.Play("StandUp");
+
+			StopUrinating();
+
+		}
+
+		private void StartSittingDown() {
+			sittingDown = true;
+
+			sitterObject.SetActive(true);
+			Animation anim = sitterObject.GetComponentInChildren<Animation>();
+			anim.Play("SitDown");
+			
+			// If the player is carrying something, drop it
+			InteractionControls i1 = player.GetComponent<InteractionControls>();
+			if(i1.CarriedObject != null) {
+				i1.HandleDrop();
+			}
+			player.SetActive(false);
+
 		}
 
 		private void SwitchToStanding() {
@@ -58,7 +106,7 @@ namespace Assets.Scripts.Interactions {
 			pos.y = player.transform.position.y;
 			player.transform.position = pos;
 
-			playerPooping = false;
+			playerSitting = false;
 			standingUp = false;
 
 			// If the player is carrying something, drop it
@@ -71,29 +119,20 @@ namespace Assets.Scripts.Interactions {
 		}
 
 		private void SwitchToSitting() {
-			playerPooping = true;
-			sitterObject.SetActive(true);
-			Animation anim = sitterObject.GetComponentInChildren<Animation>();
-			anim.Play("SitDown");
+			playerSitting = true;
+			sittingDown = false;
 
-			// If the player is carrying something, drop it
-			InteractionControls i1 = player.GetComponent<InteractionControls>();
-			if(i1.CarriedObject != null) {
-				i1.HandleDrop();
-			}
-			player.SetActive(false);
-
-			// Start playing pooping sounds. Fun!
+			StartUrinating();
 		}
 
 		public override void Activate (GameObject player, GameObject itemInHand)
 		{
-			if(playerPooping) {
+			if(playerSitting) {
 				StartStandingUp();
 			}
 			else if(lid.IsOpen) {
 				this.player = player;
-				SwitchToSitting();
+				StartSittingDown();
 			}
 		}
 	}
