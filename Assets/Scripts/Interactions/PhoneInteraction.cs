@@ -60,17 +60,20 @@ public class PhoneInteraction : Interaction, IGameEventListener {
 
 	void ReceiverLifted() {
 		receiverUp = true;
+		receiver.audio.Play();
 	}
 
 	void ReceiverReturned() {
 		receiverUp = false;
 		CloseLine();
+		receiver.audio.Stop();
 	}
 
 	private void CloseLine() {
 		currentConversation = null;
 		lineOpen = false;
 		SubtitleManager.StopTelephoneSubtitle();
+		receiver.audio.Play();
 	}
 
 	private void OpenLine(IConversation c) {
@@ -80,6 +83,7 @@ public class PhoneInteraction : Interaction, IGameEventListener {
 		string toShow = currentConversation.NameOfTalker + ": " + currentConversation.GetResponse();
 		SubtitleManager.ShowTelephoneSubtitle(toShow, receiver.transform);
 		lineOpen = true;
+		receiver.audio.Stop();
 	}
 
 	private void Dial() {

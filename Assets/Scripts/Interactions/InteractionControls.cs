@@ -44,6 +44,18 @@ public class InteractionControls : MonoBehaviour {
 				HandlePickup();
 			}
 		}
+
+		// The best crouching system ever.
+		if(Input.GetKeyDown(KeyCode.LeftShift)) {
+			Vector3 p = Camera.main.transform.position;
+			p.y -= 0.7f;
+			Camera.main.transform.position = p;
+		}
+		if(Input.GetKeyUp(KeyCode.LeftShift)) {
+			Vector3 p = Camera.main.transform.position;
+			p.y += 0.7f;
+			Camera.main.transform.position = p;
+		}
 	}
 
 	private void HandleInteraction() {

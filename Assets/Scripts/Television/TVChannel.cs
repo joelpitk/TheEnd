@@ -6,27 +6,21 @@ public class TVChannel {
 
 	public TVProgram CurrentProgram {
 		get {
-			while(programs.Peek().Done) {
+			while(programs.Count > 0 && programs.Peek().Done) {
 				programs.Dequeue();
 			}
 
-			return programs.Peek();
+			if(programs.Count > 0) {
+				return programs.Peek();
+			}
+
+			return null;
 		}
 	}
 
 	public TVChannel() {
 		programs = new Queue<TVProgram>();
 
-		List<string> texts = new List<string>();
-		List<Texture> t = new List<Texture>();
-
-		texts.Add("Hello");
-		texts.Add("I love you");
-		texts.Add("Won't you tell me your name");
-		programs.Enqueue(new TVProgram(texts, t, 15));
-
-		texts.Clear();
-		texts.Add("NOTHING TO SEE HERE");
-		programs.Enqueue(new TVProgram(texts, t, 2020202));
+		programs.Enqueue(TVProgramRepository.GetProgram("News"));
 	}
 }

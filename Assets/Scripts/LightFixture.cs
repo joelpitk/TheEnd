@@ -11,6 +11,10 @@ public class LightFixture : MonoBehaviour, IGameEventListener {
 	// Use this for initialization
 	void Start () {
 		GameEventManager.RegisterListener(this);
+
+		if(lightBulbs[0].enabled) {
+			LightBulbsOn = true;
+		}
 	}
 	public void Toggle() {
 		if(LightBulbsOn) {

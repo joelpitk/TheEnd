@@ -2,12 +2,17 @@
 using System.Collections;
 
 public class SaloraInteraction : Interaction, IGameEventListener {
+	public Texture tvOffTexture;
+	public Material screenMaterial;
+
 	public bool TVOn {
 		get; set;
 	}
 
 	private float volume;
 	private TVChannel currentChannel;
+
+	private TVProgram testcard;
 
 	public void VolumeDown() {
 		volume -= 0.1f;
@@ -26,12 +31,24 @@ public class SaloraInteraction : Interaction, IGameEventListener {
 
 		volume = 1f;
 		currentChannel = new TVChannel();
+		TVOn = false;
+
+		testcard = TVProgramRepository.GetProgram("Testcard");
+		SwitchOn();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(TVOn) {
-			SubtitleManager.ShowTelevisionSubtitle(currentChannel.CurrentProgram.Text, gameObject.transform, volume);
+			TVProgram p = currentChannel.CurrentProgram;
+			if(p != null) {
+				SubtitleManager.ShowTelevisionSubtitle(currentChannel.CurrentProgram.CurrentText, gameObject.transform, volume);
+				screenMaterial.mainTexture = currentChannel.CurrentProgram.CurrentImage;
+			}
+			else {
+				SubtitleManager.StopTelevisionSubtitle();
+				screenMaterial.mainTexture = testcard.CurrentImage;
+			}
 		}
 	}
 
@@ -51,6 +68,7 @@ public class SaloraInteraction : Interaction, IGameEventListener {
 	public void SwitchOff() {
 		TVOn = false;
 		SubtitleManager.StopTelevisionSubtitle();
+		screenMaterial.mainTexture = tvOffTexture;
 	}
 
 	public void ReceiveEvent(GameEvent e) {

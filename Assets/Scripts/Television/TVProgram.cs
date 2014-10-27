@@ -6,15 +6,30 @@ public class TVProgram {
 	private Texture[] images;
 
 	private int startTime;
-	private int lengthInMinutes;
 
-	public string Text {
+	public int LengthInMinutes {
+		get; set;
+	}
+
+	public string[] Texts {
+		get {
+			return texts;
+		}
+	}
+
+	public string CurrentText {
 		get {
 			return texts[CurrentFrame(texts)];
 		}
 	}
 
-	public Texture Image {
+	public Texture[] Images {
+		get {
+			return images;
+		}
+	}
+
+	public Texture CurrentImage {
 		get {
 			return images[CurrentFrame(images)];
 		}
@@ -22,7 +37,7 @@ public class TVProgram {
 
 	private int CurrentFrame(System.Object[] array) {
 		int elapsed = WorldClock.ElapsedMinutes - startTime;
-		float prcntElapsed = (float)elapsed / (float)lengthInMinutes;
+		float prcntElapsed = (float)elapsed / (float)LengthInMinutes;
 		if(prcntElapsed >= 1) 
 			return array.Length-1;
 		else
@@ -41,7 +56,7 @@ public class TVProgram {
 		foreach(Texture im in images) {
 			this.images[i++] = im;
 		}
-		this.lengthInMinutes = lengthInMinutes;
+		this.LengthInMinutes = lengthInMinutes;
 	}
 
 	public void Start() {
@@ -50,7 +65,7 @@ public class TVProgram {
 
 	public bool Done {
 		get {
-			return startTime + lengthInMinutes < WorldClock.ElapsedMinutes;
+			return startTime + LengthInMinutes < WorldClock.ElapsedMinutes;
 		}
 	}
 }
