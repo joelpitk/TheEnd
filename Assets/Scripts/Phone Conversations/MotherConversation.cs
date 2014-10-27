@@ -10,7 +10,7 @@ public class MotherConversation : IConversation {
 	public MotherConversation() {
 		topicQueue = new Queue<ConversationTopic>();
 
-		topicQueue.Enqueue(new ConversationTopic(120, "Oh honey, thank god for calling me! With what's been going on lately I was sure something had happened to you.", 10));
+		topicQueue.Enqueue(new ConversationTopic(120, "Oh honey, thank god for calling me! With what's been going on lately I was sure something bad had happened to you.", 10));
 	}
 
 	public string NameOfTalker {

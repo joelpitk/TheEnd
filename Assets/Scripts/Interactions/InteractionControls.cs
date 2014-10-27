@@ -14,7 +14,7 @@ public class InteractionControls : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		Screen.lockCursor = true;
 	}
 
 	void FixedUpdate() {
@@ -43,6 +43,10 @@ public class InteractionControls : MonoBehaviour {
 			else {
 				HandlePickup();
 			}
+		}
+
+		if(Input.GetKeyDown(KeyCode.Escape)) {
+			Application.Quit();
 		}
 
 		// The best crouching system ever.
