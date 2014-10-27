@@ -14,9 +14,9 @@ public class TVProgramRepository : MonoBehaviour {
 		List<Texture> t = new List<Texture>();
 
 		t.AddRange(newsFrames);
-		texts.Add ("The situation does indeed look very bad. Our analysts say that this may indeed be");
-		texts.Add ("The end of the World as we know it");
+		texts.Add ("The situation does indeed look very bad.");
 		texts.Add ("We will keep you posted on new developments as soon as they arrive.");
+		texts.Add ("However, our analysts currently say this may very well be the end of the World as we know it.");
 		programs.Add("News", new TVProgram(texts, t, 30));
 
 		t.Clear();

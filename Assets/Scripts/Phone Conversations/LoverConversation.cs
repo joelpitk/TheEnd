@@ -4,7 +4,7 @@ using System.Collections;
 public class LoverConversation : IConversation {
 	public string NameOfTalker {
 		get {
-			return "<3";
+			return "J";
 		}
 	}
 	
