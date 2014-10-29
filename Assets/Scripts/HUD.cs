@@ -23,8 +23,6 @@ public class HUD : MonoBehaviour {
 
 	void OnGUI() {
 		GUI.DrawTexture(new Rect((Screen.width - crosshair.width) / 2, (Screen.height - crosshair.height) / 2, crosshair.width, crosshair.height), crosshair);
-
-		DrawTestGUI();
 	}
 
 	void DrawTestGUI() {
